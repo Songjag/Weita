@@ -1,0 +1,19 @@
+{
+  "title": "Resource library",
+  "shares": [
+    {
+      "name": "UTC KTLT",
+      "url": "#",
+      "items": [
+        {
+          "name": "Đề thi mẫu",
+          "url": "https://github.com/huoniie/KTLT/tree/main/dethi"
+        },
+        {
+          "name": "Đề ôn tập",
+          "url": "https://drive.google.com/drive/u/0/folders/1BKpCWuv-uMWJh83ynAxiRG1dJprHVVun"
+        }
+      ]
+    }
+  ]
+}

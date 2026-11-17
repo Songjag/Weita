@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Songjag's personal space — projects, notes, and things I'm learning." />
+    <title>Songjag — Personal space</title>
+    <link rel="icon" type="image/jpeg" href="assets/avatar.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Back to top">
+          <span class="brand-mark">s</span>
+          <span>songjag<span class="brand-dot">.</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#projects">Projects</a>
+          <a href="#library">Resources</a>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+        <button class="menu-button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">@songjag</p>
+            <h1>Nguyễn Đức Nguyên</h1>
+            <p class="hero-description">I build tools with Python and write down what I learn about Linux, programming, and AI.</p>
+            <div class="hero-actions">
+              <a class="button button-dark" href="#projects">View projects <span>↘</span></a>
+              <a class="text-link" href="#library">View resources <span>↘</span></a>
+            </div>
+          </div>
+          <div class="avatar-wrap">
+            <div class="avatar-ring">
+              <img src="assets/avatar.jpg" alt="Songjag's avatar" />
+            </div>
+            <span class="avatar-label">N ·2007</span>
+          </div>
+          <div class="hero-scribble" aria-hidden="true">hello!</div>
+        </section>
+
+        <section class="terminal-section" aria-label="Interactive terminal">
+          <div class="section-topline">
+            <span class="mono-label">/home/songjag</span>
+            <span class="scroll-hint">scroll to explore <span>↓</span></span>
+          </div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="traffic-lights"><i></i><i></i><i></i></div>
+              <span class="terminal-title">songjag — bash</span>
+              <span class="terminal-icon">⌁</span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="prompt">songjag@space</span><span class="path">:~$</span> <span class="typed">neofetch --now</span></p>
+              <div class="terminal-grid">
+                <pre class="ascii" aria-label="Logo chữ S">
+  ___
+ / __|  songjag
+ \__ \  personal space
+ |___/  v.2026
+                </pre>
+                <div class="terminal-info">
+                  <p><b>focus</b><span>Python · Linux · AI</span></p>
+                  <p><b>learning</b><span>system design &amp; data</span></p>
+                  <p><b>mood</b><span class="mood">☼ curious, always</span></p>
+                </div>
+              </div>
+              <div id="command-output" class="command-output" aria-live="polite"></div>
+              <form id="terminal-form" class="terminal-form" method="get" action="/">
+                <label for="terminal-input"><span class="prompt">songjag@space</span><span class="path">:~$</span></label>
+                <input id="terminal-input" name="command" class="terminal-input" type="text" autocomplete="off" spellcheck="false" aria-label="Enter a terminal command" placeholder="help" autofocus />
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-grid" id="projects">
+          <div class="projects-column">
+            <div class="section-heading">
+              <span class="number">01</span>
+              <div><p class="eyebrow">things I build</p><h2>Featured projects</h2></div>
+            </div>
+            <div class="project-list">
+              <a class="project-card blue" href="https://github.com/Songjag/Vidsight-YouTube-Analysis-Skill" target="_blank" rel="noreferrer">
+                <span class="card-arrow">↗</span>
+                <p class="card-kicker">01 / analysis skill</p>
+                <h3>VidSight YouTube Analysis Skill</h3>
+                <p>A skill for analyzing and extracting useful insights from YouTube videos.</p>
+                <span class="tech">Python · YouTube · AI</span>
+              </a>
+              <a class="project-card yellow" href="https://github.com/Songjag/CustomAiomysql" target="_blank" rel="noreferrer">
+                <span class="card-arrow">↗</span>
+                <p class="card-kicker">02 / database utility</p>
+                <h3>CustomAiomysql</h3>
+                <p>An async MySQL utility designed for flexible database integrations.</p>
+                <span class="tech">Python · asyncio · MySQL</span>
+              </a>
+              <a class="project-card pink" href="https://github.com/Songjag/Video-Installer" target="_blank" rel="noreferrer">
+                <span class="card-arrow">↗</span>
+                <p class="card-kicker">03 / installer</p>
+                <h3>Video-Installer</h3>
+                <p>A Python project for installing and managing video tools.</p>
+                <span class="tech">Python · automation · tooling</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="side-column" id="library">
+            <div class="section-heading compact">
+              <span class="number">02</span>
+              <div><p class="eyebrow">open to explore</p><h2>Resource library</h2></div>
+            </div>
+            <div id="resource-library" class="library-list"></div>
+          </aside>
+        </section>
+
+        <section class="signature-section">
+          <div class="signature-line"></div>
+          <img src="assets/signature.png" alt="Songjag signature" class="signature" />
+          <p>thanks for stopping by.</p>
+          <div class="socials">
+            <a href="https://github.com/songjag" aria-label="GitHub" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.3a11.7 11.7 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.7 1.7.3 3 .1 3.3a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/></svg>
+            </a>
+            <a href="mailto:contact@weita.org" aria-label="Email contact@weita.org">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18A1.5 1.5 0 0 1 22.5 7v10A1.5 1.5 0 0 1 21 18.5H3A1.5 1.5 0 0 1 1.5 17V7A1.5 1.5 0 0 1 3 5.5Zm0 2.2v.1l9 5.7 9-5.7v-.1H3Zm18 2.7-8.4 5.3a1.1 1.1 0 0 1-1.2 0L3 10.4V17h18v-6.6Z"/></svg>
+            </a>
+            <a href="#top" aria-label="Về đầu trang">↑</a>
+          </div>
+        </section>
+      </main>
+      <footer><span>© 2026 songjag</span><span>made with love by Weita<span class="footer-star">✦</span></span></footer>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
