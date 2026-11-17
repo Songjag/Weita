@@ -54,7 +54,65 @@
 
   const commands = {
     help: "Available commands:\n  ⓘ help       show this help\n  ⓘ info       GitHub profile\n  ▣ project    show projects\n  □ clear      clear the screen",
-    project: "Featured projects:\n  ElysiaBot      Discord automation\n  VidSight       YouTube video analysis\n  Elysia Live2D  interactive avatar experiment",
+    project: "Featured projects:\n  VidSight YouTube Analysis Skill\n  CustomAiomysql\n  Video-Installer",
+  };
+
+  const appendPrompt = (command) => {
+    const prompt = document.createElement("p");
+    prompt.className = "command-line";
+    prompt.innerHTML = '<span class="prompt">songjag@space</span><span class="path">:~$</span> ';
+    const entered = document.createElement("span");
+    entered.className = "entered";
+    entered.textContent = command;
+    prompt.append(entered);
+    output.append(prompt);
+  };
+
+  const appendResponse = (message) => {
+    const response = document.createElement("p");
+    response.className = "command-response";
+    response.textContent = message;
+    output.append(response);
+  };
+
+  const showGitHubInfo = async () => {
+    const loading = document.createElement("p");
+    loading.className = "command-response github-loading";
+    loading.textContent = "Loading GitHub profile...";
+    output.append(loading);
+    try {
+      const response = await fetch("https://api.github.com/users/Songjag");
+      if (!response.ok) throw new Error(`GitHub profile request failed: ${response.status}`);
+      const profile = await response.json();
+      loading.remove();
+
+      const info = document.createElement("div");
+      info.className = "github-info";
+      info.innerHTML = '<img class="github-avatar" alt="GitHub avatar"><div class="github-details"><p class="github-name"><a target="_blank" rel="noreferrer"></a> <span class="github-stats"></span></p><p class="github-bio"></p><p class="github-meta"></p></div>';
+      const avatar = info.querySelector(".github-avatar");
+      avatar.src = profile.avatar_url;
+      avatar.alt = `GitHub avatar for ${profile.login}`;
+      const name = info.querySelector(".github-name a");
+      name.href = profile.html_url;
+      name.textContent = profile.name || profile.login;
+      info.querySelector(".github-stats").textContent =
+        `@${profile.login} · ${profile.followers} followers · ${profile.following} following`;
+      info.querySelector(".github-bio").textContent =
+        profile.bio || "I build tools with Python and write down what I learn about Linux, programming, and AI.";
+      const meta = [
+        profile.company && `company: ${profile.company}`,
+        profile.location && `location: ${profile.location}`,
+        profile.blog && `website: ${profile.blog}`,
+        `${profile.public_repos ?? 0} public repositories`,
+        profile.created_at && `joined ${new Date(profile.created_at).getFullYear()}`,
+      ].filter(Boolean);
+      info.querySelector(".github-meta").textContent = meta.join(" · ");
+      output.append(info);
+      output.scrollTop = output.scrollHeight;
+    } catch (error) {
+      loading.textContent = "Unable to load GitHub profile. Visit https://github.com/Songjag";
+      console.error(error);
+    }
   };
 
   form.addEventListener("submit", (event) => {
@@ -64,22 +122,13 @@
 
     if (command === "clear") {
       output.replaceChildren();
+    } else if (command === "info") {
+      appendPrompt(command);
+      showGitHubInfo();
     } else {
-      const prompt = document.createElement("p");
-      prompt.className = "command-line";
-      prompt.innerHTML = '<span class="prompt">songjag@space</span><span class="path">:~$</span> ';
-      const entered = document.createElement("span");
-      entered.className = "entered";
-      entered.textContent = command;
-      prompt.append(entered);
-
-      const response = document.createElement("p");
-      response.className = "command-response";
-      response.textContent = commands[command]
-        ?? (command === "info"
-          ? "GitHub profile: https://github.com/songjag"
-          : `Command "${command}" not found. Type help to see available commands.`);
-      output.append(prompt, response);
+      appendPrompt(command);
+      appendResponse(commands[command]
+        ?? `Command "${command}" not found. Type help to see available commands.`);
     }
 
     input.value = "";

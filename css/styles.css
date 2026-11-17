@@ -59,18 +59,19 @@ h1 { max-width: 720px; margin: 0; font-size: clamp(42px, 5.8vw, 70px); line-heig
 .ascii { color: #e7c56e; line-height: 1.35; }
 .terminal-info p { display: grid; grid-template-columns: 90px 1fr; margin: 4px 0; }
 .terminal-info b { color: #e4c57c; font-weight: 400; }.mood { color: #b6d08c; }
-.command-output { max-height: 150px; overflow-y: auto; margin: 11px 0 8px; color: #b7c8e9; white-space: pre-wrap; }
+.command-output { max-height: 360px; overflow-y: auto; margin: 11px 0 8px; color: #b7c8e9; white-space: pre-wrap; }
 .command-output:empty { display: none; }
 .command-line { margin: 3px 0; }
 .command-line .entered { color: #e0e5f1; }
 .command-response { margin: 3px 0 10px 0; color: #a6d7bd; white-space: pre-line; }
 .github-info { display: flex; align-items: flex-start; gap: 25px; padding: 8px 0 14px; color: #cbd6ef; }
-.github-avatar { width: 116px; height: 116px; flex: 0 0 auto; border: 2px solid #d5dbea; border-radius: 50%; object-fit: cover; }
+.github-avatar { width: 160px; height: 160px; flex: 0 0 auto; border: 2px solid #d5dbea; border-radius: 50%; object-fit: cover; }
 .github-details { min-width: 0; padding-top: 6px; }
 .github-name { margin: 0 0 5px; color: #dce5ff; font-size: 19px; line-height: 1.2; }
 .github-name a { color: #e7c56e; text-decoration: underline; text-underline-offset: 3px; }
 .github-stats { color: #9daaca; font-size: 12px; }
 .github-bio { max-width: 650px; margin: 10px 0 0; color: #cbd6ef; line-height: 1.65; white-space: pre-line; }
+.github-meta { max-width: 650px; margin: 8px 0 0; color: #9daaca; font-size: 12px; line-height: 1.6; }
 .github-bio strong { color: #e7c56e; font-weight: 400; }
 .github-loading { color: #b6d08c; }
 .terminal-form { display: flex; align-items: center; gap: 7px; margin: 0; }
